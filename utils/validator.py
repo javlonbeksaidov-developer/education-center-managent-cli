@@ -50,4 +50,4 @@ def add_teacher_input():
 
 
 def search_input(message):
-    return input(message)
+    return input(message).strip()

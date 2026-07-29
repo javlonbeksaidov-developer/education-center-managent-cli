@@ -16,7 +16,14 @@ from services.student_service import (
     show_students,
     update_student,
 )
-from services.teacher_service import add_teacher
+from services.teacher_service import (
+    add_teacher,
+    block_active_teacher,
+    delete_teacher,
+    search_teacher,
+    show_teacher,
+    update_teacher,
+)
 from services.user_service import profile
 from utils.validator import input_text
 
@@ -58,6 +65,16 @@ def admin(user):
                     break
                 elif choice == '1':
                     print(add_teacher(user))
+                elif choice == '2':
+                    show_teacher(user)
+                elif choice == '3':
+                    search_teacher(user)
+                elif choice == '4':
+                    update_teacher(user)
+                elif choice == '5':
+                    delete_teacher(user)
+                elif choice == '6':
+                    block_active_teacher(user)
 
         elif choice == '4':
             while True:

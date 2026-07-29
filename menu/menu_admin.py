@@ -44,6 +44,7 @@ def menu_admin_teachers():
 3. Search Teacher
 4. Update Teacher
 5. Delete Teacher
+6. Block or Active
 0. Back
 """
     return menu
