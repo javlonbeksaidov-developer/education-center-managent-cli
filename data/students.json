@@ -1,0 +1,28 @@
+[
+    {
+        "id": "678237",
+        "name": "shoxrux",
+        "surname": "jumayev",
+        "username": "shoxrux",
+        "phone": "881234567",
+        "password": "12345678",
+        "status": "active",
+        "created_at": "2026-07-28",
+        "role": "student",
+        "group_id": [],
+        "balance": 0
+    },
+    {
+        "id": "244845",
+        "name": "olimjon",
+        "surname": "hakimov",
+        "username": "olimjonhakimov",
+        "phone": "981234567",
+        "password": "12345678",
+        "status": "block",
+        "created_at": "2026-07-29",
+        "role": "student",
+        "group_id": [],
+        "balance": 0
+    }
+]
