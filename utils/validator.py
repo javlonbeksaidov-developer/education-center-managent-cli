@@ -51,3 +51,16 @@ def add_teacher_input():
 
 def search_input(message):
     return input(message).strip()
+
+
+def add_course_input():
+    name = input("Name: ")
+    while True:
+        try:
+            price = int(input("Price: "))
+            break
+        except ValueError:
+            print("Iltimos, Butun son kiriting.")
+    description = input("Description: ")
+
+    return name, price, description

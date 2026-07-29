@@ -58,6 +58,7 @@ def menu_admin_courses():
 2. Show Courses
 3. Update Course
 4. Delete Course
+5. Pauze Course
 0. Back
 """
     return menu

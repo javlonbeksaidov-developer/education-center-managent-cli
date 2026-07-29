@@ -8,6 +8,13 @@ from menu.menu_admin import (
     menu_admin_students,
     menu_admin_teachers,
 )
+from services.course_service import (
+    active_pause_course,
+    add_course,
+    delete_course,
+    show_course,
+    update_course,
+)
 from services.student_service import (
     add_student,
     block_active_student,
@@ -82,6 +89,16 @@ def admin(user):
                 choice = input_text(">>> ")
                 if choice == '0':
                     break
+                elif choice == '1':
+                    add_course(user)
+                elif choice == '2':
+                    show_course(user)
+                elif choice == '3':
+                    update_course(user)
+                elif choice == '4':
+                    delete_course(user)
+                elif choice == '5':
+                    active_pause_course(user)
 
         elif choice == '5':
             while True:
