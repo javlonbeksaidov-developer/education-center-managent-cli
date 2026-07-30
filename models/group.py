@@ -32,7 +32,13 @@ class Group:
 
     @classmethod
     def from_dict(cls, data):
-        group = cls(name=data["name"], start=data["start_date"], stop=data["stop_date"], course_id=data["course_id"], teacher_id=data["teacher_id"])
+        group = cls(
+            name=data["name"],
+            start=data["start_date"],
+            stop=data["stop_date"],
+            course_id=data["course_id"],
+            teacher_id=data["teacher_id"],
+        )
         group.id = data["id"]
         group.name = data["name"]
         group.students = data["students"]
@@ -41,4 +47,3 @@ class Group:
 
     def info(self):
         return f"ID: {self.id}. Group name: {self.name}. Date: ({self.start_date} - {self.stop_date}). Status: {self.status}. Course ID: {self.course_id}. Teacher ID: {self.teacher_id}. Students count: {len(self.students)}."
-

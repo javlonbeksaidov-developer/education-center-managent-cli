@@ -25,7 +25,7 @@ class Teacher(User):
             username=data["username"],
             phone=data["phone"],
             salary=data["salary"],
-            speciality=data["speciality"]
+            speciality=data["speciality"],
         )
 
         teacher.id = data["id"]

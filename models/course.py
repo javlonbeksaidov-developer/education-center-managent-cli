@@ -17,21 +17,19 @@ class Course:
 
     def to_dict(self):
         return {
-            "id" : self.id,
-            "name" : self.name,
-            "price" : self.price,
-            "description" : self.description,
-            "duration" : self.duration,
-            "status" : self.status,
-            "created_at" : self.created_at.isoformat(),
+            "id": self.id,
+            "name": self.name,
+            "price": self.price,
+            "description": self.description,
+            "duration": self.duration,
+            "status": self.status,
+            "created_at": self.created_at.isoformat(),
         }
 
     @classmethod
     def from_dict(cls, data):
         course = cls(
-            name=data["name"],
-            price=data["price"],
-            description=data["description"]
+            name=data["name"], price=data["price"], description=data["description"]
         )
 
         course.id = data["id"]

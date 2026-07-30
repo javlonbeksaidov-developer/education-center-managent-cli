@@ -7,8 +7,8 @@ def teacher(user):
     while True:
         print(menu_teacher())
         choice = input_text(">>> ")
-        if choice == '0':
+        if choice == "0":
             print(f"The end | {user['name'].title()}{user['surname'].title()}")
             break
-        elif choice == '1':
+        elif choice == "1":
             print(profile(user))

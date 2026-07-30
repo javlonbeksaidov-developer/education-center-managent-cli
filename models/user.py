@@ -4,6 +4,7 @@ from utils.generator import id_generator
 
 NOW = datetime.now()  # noqa: DTZ005
 
+
 class User:
     def __init__(self, name, surname, username, phone):
         self.id = str(id_generator(6))
@@ -11,7 +12,7 @@ class User:
         self.surname = surname
         self.username = username
         self.phone = phone
-        self.password = '12345678'
+        self.password = "12345678"
         self.status = "active"  # 'active' or 'block'
         self.created_at = NOW.date()
 

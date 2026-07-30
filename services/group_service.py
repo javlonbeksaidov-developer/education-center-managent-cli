@@ -156,7 +156,7 @@ def delete_group(user):
 
     search = search_input("Group ID: ")
     for data_group in data_groups:
-        if search == data_group['id']:
+        if search == data_group["id"]:
             group = Group.from_dict(data_group)
             print(group.info())
 
@@ -168,26 +168,26 @@ def delete_group(user):
             print(f"Delete ID: {data_group['id']} group.")
 
 
-
 def active_pause_group(user):
     data_groups = load(DATA_GROUPS)
     print("=== Active / Pause Group ===\n")
 
     search = search_input("Group ID: ")
     for i, data_group in enumerate(data_groups):
-        if search == data_group['id']:
+        if search == data_group["id"]:
             group = Group.from_dict(data_group)
             print(group.info())
 
-            if data_group['status'] == "active":
+            if data_group["status"] == "active":
                 text = "block"
             else:
                 text = "active"
 
-
-            choise = search_input(f"{data_group['name']} guruhini ({text}) qilasizmi? (yes/no): ").lower()
+            choise = search_input(
+                f"{data_group['name']} guruhini ({text}) qilasizmi? (yes/no): "
+            ).lower()
             if choise == "yes":
-                data_group['status'] = text
+                data_group["status"] = text
                 data_groups[i] = data_group
 
             save(DATA_GROUPS, data_groups)

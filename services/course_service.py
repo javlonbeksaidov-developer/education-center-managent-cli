@@ -26,16 +26,16 @@ def update_course(user):
     data_courses = load(DATA_COURSES)
     search = search_input("ID: ")
     for i, data_course in enumerate(data_courses):
-        if search == data_course['id']:
+        if search == data_course["id"]:
             course = Course.from_dict(data_course)
             print(course.info())
 
             choise = search_input("\nUpdate course (yes/no): ").lower()
-            if choise == 'yes':
+            if choise == "yes":
                 name, price, description = add_course_input()
-                data_course['name'] = name
-                data_course['price'] = price
-                data_course['description'] = description
+                data_course["name"] = name
+                data_course["price"] = price
+                data_course["description"] = description
                 data_courses[i] = data_course
 
             save(DATA_COURSES, data_courses)
@@ -46,12 +46,12 @@ def delete_course(user):
     data_courses = load(DATA_COURSES)
     search = search_input("ID: ")
     for data_course in data_courses:
-        if search == data_course['id']:
+        if search == data_course["id"]:
             course = Course.from_dict(data_course)
             print(course.info())
 
             choise = search_input("\nDelete course (yes/no): ").lower()
-            if choise == 'yes':
+            if choise == "yes":
                 data_courses.remove(data_course)
 
         save(DATA_COURSES, data_courses)
@@ -62,18 +62,20 @@ def active_pause_course(user):
     data_courses = load(DATA_COURSES)
     search = search_input("ID: ")
     for i, data_course in enumerate(data_courses):
-        if search == data_course['id']:
+        if search == data_course["id"]:
             course = Course.from_dict(data_course)
             print(course.info())
 
-            if data_course['status'] == 'active':
-                text = 'block'
+            if data_course["status"] == "active":
+                text = "block"
             else:
-                text = 'active'
+                text = "active"
 
-            choise = search_input(f"\n{data_course['name']} ({text}) qilasizmi? (yes/no): ").lower()
-            if choise == 'yes':
-                data_course['status'] = text
+            choise = search_input(
+                f"\n{data_course['name']} ({text}) qilasizmi? (yes/no): "
+            ).lower()
+            if choise == "yes":
+                data_course["status"] = text
                 data_courses[i] = data_course
 
             save(DATA_COURSES, data_courses)

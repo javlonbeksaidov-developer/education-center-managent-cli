@@ -13,7 +13,9 @@ def login():
                 while True:
                     password = input("Password: ")
                     if password == user["password"]:
-                        print(f"Welcome, {user['name'].title()} {user['surname'].title()}")
+                        print(
+                            f"Welcome, {user['name'].title()} {user['surname'].title()}"
+                        )
                         return user
                     else:
                         print(f"Xato. ({password}) parol mos kelmayapti.")
