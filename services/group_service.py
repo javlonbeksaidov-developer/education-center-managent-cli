@@ -29,7 +29,7 @@ def show_group(user):
         print(f"{i}. {group.info()}")
 
 
-def add_student(user):
+def add_student_group(user):
     data_groups = load(DATA_GROUPS)
     data_users = load(DATA_USERS)
     data_students = load(DATA_STUDENTS)

@@ -15,6 +15,15 @@ from services.course_service import (
     show_course,
     update_course,
 )
+from services.group_service import (
+    active_pause_group,
+    add_student_group,
+    create_group,
+    delete_group,
+    remove_student,
+    show_group,
+    update_group,
+)
 from services.student_service import (
     add_student,
     block_active_student,
@@ -33,7 +42,7 @@ from services.teacher_service import (
 )
 from services.user_service import profile
 from utils.validator import input_text
-from services.group_service import create_group, show_group, add_group_input, remove_student, add_student, active_pause_group, delete_group, update_group
+
 
 def admin(user):
     while True:
@@ -111,7 +120,7 @@ def admin(user):
                 elif choice == '2':
                     show_group(user)
                 elif choice == '3':
-                    add_student(user)
+                    add_student_group(user)
                 elif choice == '4':
                     remove_student(user)
                 elif choice == '5':
