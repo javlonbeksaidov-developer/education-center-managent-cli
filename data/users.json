@@ -20,7 +20,9 @@
         "status": "active",
         "created_at": "2026-07-28",
         "role": "student",
-        "group_id": [],
+        "group_id": [
+            "932"
+        ],
         "balance": 0
     },
     {
@@ -46,7 +48,9 @@
         "status": "block",
         "created_at": "2026-07-29",
         "role": "student",
-        "group_id": [],
+        "group_id": [
+            "932"
+        ],
         "balance": 0
     },
     {

@@ -58,7 +58,7 @@ def menu_admin_courses():
 2. Show Courses
 3. Update Course
 4. Delete Course
-5. Pauze Course
+5. Pause Course
 0. Back
 """
     return menu
@@ -72,9 +72,9 @@ def menu_admin_groups():
 2. Show Groups
 3. Add Student
 4. Remove Student
-5. Assign Teacher
-6. Group Details
-7. Delete Group
+5. Update Group
+6. Delete Group
+7. Pause Group
 0. Back
 """
     return menu

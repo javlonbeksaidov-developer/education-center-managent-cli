@@ -1,4 +1,11 @@
+import calendar
+from datetime import datetime
+
 from database.json_service import load
+from models.course import Course
+from models.teacher import Teacher
+
+NOW = datetime.now()  # noqa: DTZ005
 
 
 def input_text(message):
@@ -18,6 +25,7 @@ def user_name():
             else:
                 print(f"Ushbu ({username}) nomli username band.\n")
                 print("Qaytadan urunib ko'ring.")
+
 
 def add_user_input():
     name = input("Name: ")
@@ -64,3 +72,84 @@ def add_course_input():
     description = input("Description: ")
 
     return name, price, description
+
+
+def year_month_day():
+    while True:
+        try:
+            year = int(input("Year:"))
+        except ValueError:
+            print(f"Year (1900-{NOW.year})")
+        else:
+            if 1900 <= year <= NOW.year:
+                break
+            else:
+                print(f"Year 1900-{NOW.year}.")
+
+    while True:
+        try:
+            month = int(input("Month:"))
+        except ValueError:
+            print("Month (1-12)")
+        else:
+            if 1 <= month <= 12:
+                break
+            else:
+                print("Month (1-12)")
+
+    _, max_day = calendar.monthrange(year=year, month=month)
+    while True:
+        try:
+            day = int(input("Day:"))
+        except ValueError:
+            print(f"Day (1-{max_day})")
+        else:
+            if 1 <= day <= max_day:
+                break
+            else:
+                print(f"Day (1-{max_day})")
+
+    return year, month, day
+
+
+
+DATA_COURSES = 'data/courses.json'
+DATA_TEACHERS = 'data/teachers.json'
+def add_group_input():
+    name = input("Name: ")
+
+    print("\nStart date")
+    year, month, day = year_month_day()
+    start = datetime(year=year, month=month, day=day)  # noqa: DTZ001
+
+    print("\nStop date")
+    year, month, day = year_month_day()
+    stop = datetime(year=year, month=month, day=day)  # noqa: DTZ001
+
+    data_courses = load(DATA_COURSES)
+    course_id = input("\nCourse ID: ")
+    for data_course in data_courses:
+        if course_id == data_course['id']:
+            course = Course.from_dict(data_course)
+            print(course.info())
+
+            choise = search_input("Add course (yes/no): ").lower()
+            if choise == 'yes':
+                course_id = data_course['id']
+            else:
+                course_id = ''
+
+    data_teachers = load(DATA_TEACHERS)
+    teacher_id = input("Teacher ID: ")
+    for data_teacher in data_teachers:
+        if teacher_id == data_teacher['id']:
+            teacher = Teacher.from_dict(data_teacher)
+            print(teacher.info())
+
+            choise = search_input("Add teacher (yes/no): ").lower()
+            if choise == 'yes':
+                teacher_id = data_teacher['id']
+            else:
+                teacher_id = ''
+
+    return name, start, stop, course_id, teacher_id

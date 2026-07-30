@@ -33,7 +33,7 @@ from services.teacher_service import (
 )
 from services.user_service import profile
 from utils.validator import input_text
-
+from services.group_service import create_group, show_group, add_group_input, remove_student, add_student, active_pause_group, delete_group, update_group
 
 def admin(user):
     while True:
@@ -106,6 +106,20 @@ def admin(user):
                 choice = input_text(">>> ")
                 if choice == '0':
                     break
+                elif choice == '1':
+                    create_group(user)
+                elif choice == '2':
+                    show_group(user)
+                elif choice == '3':
+                    add_student(user)
+                elif choice == '4':
+                    remove_student(user)
+                elif choice == '5':
+                    update_group(user)
+                elif choice == '6':
+                    delete_group(user)
+                elif choice == '7':
+                    active_pause_group(user)
 
         elif choice == '6':
             while True:
