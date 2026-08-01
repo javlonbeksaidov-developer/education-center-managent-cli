@@ -100,8 +100,7 @@ def menu_admin_attendance():
 
 1. Take Attendance
 2. Show Attendance
-3. Today's Attendance
-4. Student Attendance
+3. Student Attendance
 0. Back
 """
     return menu

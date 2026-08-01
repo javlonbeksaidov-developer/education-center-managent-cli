@@ -1,5 +1,5 @@
 import calendar
-from datetime import datetime, date
+from datetime import date, datetime
 
 from database.json_service import load
 from models.course import Course
@@ -113,9 +113,10 @@ def year_month_day():
     return year, month, day
 
 
+DATA_COURSES = "data/courses.json"
+DATA_TEACHERS = "data/teachers.json"
 
-DATA_COURSES = 'data/courses.json'
-DATA_TEACHERS = 'data/teachers.json'
+
 def add_group_input():
     name = input("Name: ")
 
@@ -130,39 +131,38 @@ def add_group_input():
     data_courses = load(DATA_COURSES)
     course_id = input("\nCourse ID: ")
     for data_course in data_courses:
-        if course_id == data_course['id']:
+        if course_id == data_course["id"]:
             course = Course.from_dict(data_course)
             print(course.info())
 
             choise = search_input("Add course (yes/no): ").lower()
-            if choise == 'yes':
-                course_id = data_course['id']
+            if choise == "yes":
+                course_id = data_course["id"]
             else:
-                course_id = ''
+                course_id = ""
 
     data_teachers = load(DATA_TEACHERS)
     teacher_id = input("Teacher ID: ")
     for data_teacher in data_teachers:
-        if teacher_id == data_teacher['id']:
+        if teacher_id == data_teacher["id"]:
             teacher = Teacher.from_dict(data_teacher)
             print(teacher.info())
 
             choise = search_input("Add teacher (yes/no): ").lower()
-            if choise == 'yes':
-                teacher_id = data_teacher['id']
+            if choise == "yes":
+                teacher_id = data_teacher["id"]
             else:
-                teacher_id = ''
+                teacher_id = ""
 
     return name, start, stop, course_id, teacher_id
 
 
-
 def add_payment_input():
-    DATA_STUDENTS = 'data/students.json'
+    DATA_STUDENTS = "data/students.json"
     data_students = load(DATA_STUDENTS)
     student_id = input("Student ID: ")
     for data_student in data_students:
-        if student_id == data_student['id']:
+        if student_id == data_student["id"]:
             student = Student.from_dict(data_student)
             print(student.info())
 
@@ -186,4 +186,3 @@ def add_payment_input():
     comment = input("Comment: ")
 
     return student_id, amount, payment_date, payment_type, comment
-

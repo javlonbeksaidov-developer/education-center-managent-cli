@@ -8,6 +8,11 @@ from menu.menu_admin import (
     menu_admin_students,
     menu_admin_teachers,
 )
+from services.attendance_service import (
+    show_attendance,
+    student_attendance,
+    take_attendance,
+)
 from services.course_service import (
     active_pause_course,
     add_course,
@@ -28,8 +33,8 @@ from services.payment_service import (
     add_payment,
     delete_payments,
     history_payment,
-    unpaid_students,
     search_payments,
+    unpaid_students,
 )
 from services.student_service import (
     add_student,
@@ -159,6 +164,12 @@ def admin(user):
                 choice = input_text(">>> ")
                 if choice == "0":
                     break
+                elif choice == "1":
+                    take_attendance(user)
+                elif choice == "2":
+                    show_attendance(user)
+                elif choice == "3":
+                    student_attendance(user)
 
         elif choice == "8":
             while True:
