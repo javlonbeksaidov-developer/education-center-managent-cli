@@ -7,7 +7,7 @@ NOW = datetime.now()  # noqa: DTZ005
 
 class Payment:
     def __init__(self, student_id, amount, payment_date, payment_type, comment):
-        self.id = id_generator(10)
+        self.id = str(id_generator(10))
         self.student_id = student_id
         self.amount = amount
         self.payment_date = payment_date

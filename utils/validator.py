@@ -1,10 +1,10 @@
 import calendar
-from datetime import datetime
+from datetime import datetime, date
 
 from database.json_service import load
 from models.course import Course
-from models.teacher import Teacher
 from models.student import Student
+from models.teacher import Teacher
 
 NOW = datetime.now()  # noqa: DTZ005
 
@@ -179,7 +179,7 @@ def add_payment_input():
 
     print("=== Payment date ===")
     year, month, day = year_month_day()
-    payment_date = datetime(year=year, month=month, day=day)  # noqa: DTZ001
+    payment_date = date(year=year, month=month, day=day)
 
     payment_type = input("Payment type: ")
 

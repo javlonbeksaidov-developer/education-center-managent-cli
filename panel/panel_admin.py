@@ -24,6 +24,13 @@ from services.group_service import (
     show_group,
     update_group,
 )
+from services.payment_service import (
+    add_payment,
+    delete_payments,
+    history_payment,
+    unpaid_students,
+    search_payments,
+)
 from services.student_service import (
     add_student,
     block_active_student,
@@ -42,7 +49,7 @@ from services.teacher_service import (
 )
 from services.user_service import profile
 from utils.validator import input_text
-from services.payment_service import add_payment, history_payment, monthly_payment, unpaid_students, delete_payments
+
 
 def admin(user):
     while True:
@@ -140,11 +147,11 @@ def admin(user):
                 elif choice == "2":
                     history_payment(user)
                 elif choice == "3":
-                    monthly_payment(user)
-                elif choice == "4":
                     unpaid_students(user)
-                elif choice == "5":
+                elif choice == "4":
                     delete_payments(user)
+                elif choice == "5":
+                    search_payments(user)
 
         elif choice == "7":
             while True:

@@ -1,20 +1,38 @@
 [
     {
-        "id": 4152127949,
+        "id": "4152127949",
         "student_id": "678237",
         "amount": 400000,
-        "payment_date": "2026-01-01T00:00:00",
+        "payment_date": "2026-01-01",
         "payment_type": "monthly",
         "comment": "yanvar oy tulov",
         "created_at": "2026-08-01"
     },
     {
-        "id": 6941811367,
+        "id": "6941811367",
         "student_id": "678237",
         "amount": 450000,
-        "payment_date": "2026-02-01T00:00:00",
+        "payment_date": "2026-02-01",
         "payment_type": "monthly",
         "comment": "fevral oy tulovi",
+        "created_at": "2026-08-01"
+    },
+    {
+        "id": "5111768653",
+        "student_id": "678237",
+        "amount": 150000,
+        "payment_date": "2026-01-01",
+        "payment_type": "book",
+        "comment": "payment for books",
+        "created_at": "2026-08-01"
+    },
+    {
+        "id": "2914162453",
+        "student_id": "244845",
+        "amount": 200000,
+        "payment_date": "2026-01-01",
+        "payment_type": "monthly",
+        "comment": "oylik tulov",
         "created_at": "2026-08-01"
     }
 ]

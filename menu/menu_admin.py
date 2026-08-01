@@ -86,9 +86,9 @@ def menu_admin_payments():
 
 1. Add Payment
 2. Payment History
-3. Monthly Payments
-4. Unpaid Students
-5. Delete Payment
+3. Unpaid Students
+4. Delete Payment
+5. Search Payment
 0. Back
 """
     return menu
