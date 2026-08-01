@@ -110,14 +110,14 @@ def menu_admin_reports():
     menu = """
 ========= ADMIN PANEL | REPORTS =========
 
-1. Total Students
-2. Total Teachers
-3. Total Groups
-4. Total Courses
-5. Monthly Income
-6. Top Groups
-7. Attendance Report
-8. Export Report
+1. Total Users
+2. Total Students
+3. Total Teachers
+4. Total Groups
+5. Total Courses
+6. Total Attendances
+7. Total Payments
+8. Total IDs
 0. Back
 """
     return menu

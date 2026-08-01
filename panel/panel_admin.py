@@ -36,6 +36,16 @@ from services.payment_service import (
     search_payments,
     unpaid_students,
 )
+from services.reports_service import (
+    total_attendances,
+    total_courses,
+    total_groups,
+    total_id,
+    total_payments,
+    total_students,
+    total_teachers,
+    total_users,
+)
 from services.student_service import (
     add_student,
     block_active_student,
@@ -177,6 +187,22 @@ def admin(user):
                 choice = input_text(">>> ")
                 if choice == "0":
                     break
+                elif choice == "1":
+                    total_users(user)
+                elif choice == "2":
+                    total_students(user)
+                elif choice == "3":
+                    total_teachers(user)
+                elif choice == "4":
+                    total_groups(user)
+                elif choice == "5":
+                    total_courses(user)
+                elif choice == "6":
+                    total_attendances(user)
+                elif choice == "7":
+                    total_payments(user)
+                elif choice == "8":
+                    total_id(user)
 
         else:
             print("Xato. Noto'g'ri bo'lim.")

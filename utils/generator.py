@@ -20,6 +20,7 @@ def id_generator(number):
 
             id_dict = {
                 "id": str(id),
+                "number": number,
             }
             data.append(id_dict)
             save(data_id, data)
