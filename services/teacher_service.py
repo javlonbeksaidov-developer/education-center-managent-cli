@@ -125,23 +125,25 @@ def block_active_teacher(user):
     search = search_input("ID or username: ")
 
     for i, data_teacher in enumerate(data_teachers):
-        if search == data_teacher['id'] or search == data_teacher['username']:
+        if search == data_teacher["id"] or search == data_teacher["username"]:
             teacher = Teacher.from_dict(data_teacher)
             print(teacher.info())
 
-            if data_teacher['status'] == 'active':
-                text = 'block'
+            if data_teacher["status"] == "active":
+                text = "block"
             else:
-                text = 'active'
+                text = "active"
 
-            choise = search_input(f"\n{data_teacher['username']} ({text}) qilasizmi? (yes/no): ").lower()
-            if choise == 'yes':
-                data_teacher['status'] = text
+            choise = search_input(
+                f"\n{data_teacher['username']} ({text}) qilasizmi? (yes/no): "
+            ).lower()
+            if choise == "yes":
+                data_teacher["status"] = text
                 data_teachers[i] = data_teacher
 
                 for j, data_user in enumerate(data_users):
-                    if data_user['id'] == data_teacher['id']:
-                        data_user['status'] = text
+                    if data_user["id"] == data_teacher["id"]:
+                        data_user["status"] = text
                         data_users[j] = data_user
                         break
 

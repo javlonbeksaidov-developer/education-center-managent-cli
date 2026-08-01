@@ -70,4 +70,4 @@ def student_attendance(user):
                         if student_id in attendance:
                             student_attendance.append(attendance[student_id])
 
-                print(f"\n{data_student["username"]} attendance:\n{student_attendance}")
+                print(f"\n{data_student['username']} attendance:\n{student_attendance}")

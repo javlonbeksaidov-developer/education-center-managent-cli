@@ -54,7 +54,7 @@ def unpaid_students(user):
     data_students = load(DATA_STUDENTS)
     print("=== Unpaid payment ===\n")
     for data_student in data_students:
-        if data_student['balance'] < 0:
+        if data_student["balance"] < 0:
             student = Student.from_dict(data_student)
             print(student.info())
 
@@ -64,7 +64,7 @@ def delete_payments(user):
     print("=== Delete payment ===\n")
     search = search_input("Payment ID: ")
     for data_payment in data_payments:
-        if search == data_payment['id']:
+        if search == data_payment["id"]:
             payment = Payment.from_dict(data_payment)
             print(f"{payment.info()}")
 
@@ -75,11 +75,12 @@ def delete_payments(user):
     save(DATA_PAYMENTS, data_payments)
     print(f"Delete payment ID: {data_payment['id']}.")
 
+
 def search_payments(user):
     data_payments = load(DATA_PAYMENTS)
     print("=== Search payment ===\n")
     search = search_input("Payment ID or Student ID: ").lower()
     for data_payment in data_payments:
-        if search == data_payment['id'] or search == data_payment['student_id']:
+        if search == data_payment["id"] or search == data_payment["student_id"]:
             payment = Payment.from_dict(data_payment)
             print(f"{payment.info()}")
