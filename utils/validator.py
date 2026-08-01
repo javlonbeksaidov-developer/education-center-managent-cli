@@ -4,6 +4,7 @@ from datetime import datetime
 from database.json_service import load
 from models.course import Course
 from models.teacher import Teacher
+from models.student import Student
 
 NOW = datetime.now()  # noqa: DTZ005
 
@@ -153,3 +154,36 @@ def add_group_input():
                 teacher_id = ''
 
     return name, start, stop, course_id, teacher_id
+
+
+
+def add_payment_input():
+    DATA_STUDENTS = 'data/students.json'
+    data_students = load(DATA_STUDENTS)
+    student_id = input("Student ID: ")
+    for data_student in data_students:
+        if student_id == data_student['id']:
+            student = Student.from_dict(data_student)
+            print(student.info())
+
+            choise = input("Add payment (yes/no): ").lower()
+            if choise == "yes":
+                break
+
+    while True:
+        try:
+            amount = int(input("Amount: "))
+            break
+        except ValueError:
+            print("Butun son kiriting.")
+
+    print("=== Payment date ===")
+    year, month, day = year_month_day()
+    payment_date = datetime(year=year, month=month, day=day)  # noqa: DTZ001
+
+    payment_type = input("Payment type: ")
+
+    comment = input("Comment: ")
+
+    return student_id, amount, payment_date, payment_type, comment
+

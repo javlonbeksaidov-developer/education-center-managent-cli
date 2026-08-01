@@ -1,0 +1,20 @@
+[
+    {
+        "id": 4152127949,
+        "student_id": "678237",
+        "amount": 400000,
+        "payment_date": "2026-01-01T00:00:00",
+        "payment_type": "monthly",
+        "comment": "yanvar oy tulov",
+        "created_at": "2026-08-01"
+    },
+    {
+        "id": 6941811367,
+        "student_id": "678237",
+        "amount": 450000,
+        "payment_date": "2026-02-01T00:00:00",
+        "payment_type": "monthly",
+        "comment": "fevral oy tulovi",
+        "created_at": "2026-08-01"
+    }
+]

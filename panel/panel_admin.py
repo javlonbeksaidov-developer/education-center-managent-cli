@@ -42,7 +42,7 @@ from services.teacher_service import (
 )
 from services.user_service import profile
 from utils.validator import input_text
-
+from services.payment_service import add_payment, history_payment, monthly_payment, unpaid_students, delete_payments
 
 def admin(user):
     while True:
@@ -135,6 +135,16 @@ def admin(user):
                 choice = input_text(">>> ")
                 if choice == "0":
                     break
+                elif choice == "1":
+                    add_payment(user)
+                elif choice == "2":
+                    history_payment(user)
+                elif choice == "3":
+                    monthly_payment(user)
+                elif choice == "4":
+                    unpaid_students(user)
+                elif choice == "5":
+                    delete_payments(user)
 
         elif choice == "7":
             while True:
