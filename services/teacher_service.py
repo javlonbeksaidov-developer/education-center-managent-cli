@@ -1,9 +1,15 @@
 from database.json_service import load, save
+from models.group import Group
+from models.student import Student
 from models.teacher import Teacher
 from utils.validator import add_teacher_input, add_user_input, search_input
 
 DATA_USERS = "data/users.json"
 DATA_TEACHERS = "data/teachers.json"
+DATA_STUDENTS = "data/students.json"
+DATA_ATTENDANCES = "data/attendances.json"
+DATA_PATMENTS = "data/payments.json"
+DATA_GROUPS = "data/groups.json"
 
 
 def add_teacher(user):
@@ -151,3 +157,32 @@ def block_active_teacher(user):
             save(DATA_TEACHERS, data_teachers)
 
             print(f"{data_teacher['username']} ({text}) qilindi.")
+
+
+""" ===== Teacher panel ===== """
+
+
+def teacher_my_groups(user):
+    data_groups = load(DATA_GROUPS)
+    print(f"===== {user['username']}'s groups =====\n")
+    for i, data_group in enumerate(data_groups, start=1):
+        if data_group["teacher_id"] == user["id"]:
+            group = Group.from_dict(data_group)
+            print(f"{i}. {group.info()}")
+
+
+def teacher_students(user):
+    data_groups = load(DATA_GROUPS)
+    data_students = load(DATA_STUDENTS)
+    print(f"===== {user['username']}'s students =====\n")
+    students = set()
+    for data_group in data_groups:
+        if data_group["teacher_id"] == user["id"]:
+            for student_id in data_group["students"]:
+                students.add(student_id)
+
+    for i, student_id in enumerate(students, start=1):
+        for data_student in data_students:
+            if student_id == data_student["id"]:
+                student = Student.from_dict(data_student)
+                print(f"{i}. {student.info()}")

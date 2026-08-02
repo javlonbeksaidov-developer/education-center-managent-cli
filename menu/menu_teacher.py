@@ -8,9 +8,9 @@ def menu_teacher():
 ========= TEACHER PANEL =========
 
 1. My Profile
-1. My Groups
-2. Students
-3. Attendance
+2. My Groups
+3. Students
+4. Attendance
 0. Exit
 """
     return menu

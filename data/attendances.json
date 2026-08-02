@@ -20,5 +20,27 @@
         ],
         "group_id": "116",
         "created_at": "2026-08-01"
+    },
+    {
+        "attendance id": "5463248396",
+        "student_id": [
+            {
+                "678237": true,
+                "244845": true
+            }
+        ],
+        "group_id": "116",
+        "created_at": "2026-08-02"
+    },
+    {
+        "attendance id": "2949717733",
+        "student_id": [
+            {
+                "678237": true,
+                "244845": false
+            }
+        ],
+        "group_id": "116",
+        "created_at": "2026-08-02"
     }
 ]

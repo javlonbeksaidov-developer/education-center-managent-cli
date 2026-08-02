@@ -17,7 +17,10 @@ def take_attendance(user):
     group_id = search_input("Group ID: ")
 
     for data_group in data_groups:
-        if group_id == data_group["id"]:
+        if (group_id == data_group["id"]) and (
+            (user["role"] == "admin")
+            or (user["role"] == "teacher" and data_group["teacher_id"] == user["id"])
+        ):
             group = Group.from_dict(data_group)
             print(f"\n{group.info()}")
 
