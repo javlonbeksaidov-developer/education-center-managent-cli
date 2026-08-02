@@ -1,6 +1,6 @@
 from database.json_service import load, save
-from models.student import Student
 from models.group import Group
+from models.student import Student
 from utils.validator import add_user_input, input_text, search_input
 
 DATA_USERS = "data/users.json"
