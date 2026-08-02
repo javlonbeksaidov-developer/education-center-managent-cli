@@ -1,9 +1,13 @@
 from database.json_service import load, save
 from models.student import Student
+from models.group import Group
 from utils.validator import add_user_input, input_text, search_input
 
 DATA_USERS = "data/users.json"
 DATA_STUDENTS = "data/students.json"
+DATA_ATTENDANCES = "data/attendances.json"
+DATA_PATMENTS = "data/payments.json"
+DATA_GROUPS = "data/groups.json"
 
 
 def add_student(user):
@@ -142,3 +146,45 @@ def block_active_student(user):
 
                 print(f"\n{data_student['username']} ({text}) qilindi.")
                 return
+
+
+""" === Student panel ==="""
+
+
+def student_my_group(user):
+    data_groups = load(DATA_GROUPS)
+    print(f"===== {user['username']}'s groups =====\n")
+    for data_group in data_groups:
+        for student_id in data_group["students"]:
+            if student_id == user["id"]:
+                group = Group.from_dict(data_group)
+                print(group.info())
+
+
+def student_attendance(user):
+    data_attendances = load(DATA_ATTENDANCES)
+    print(f"===== {user['username']}'s attendances =====\n")
+    attendances = []
+    for data_attendance in data_attendances:
+        for student_ids in data_attendance["student_id"]:
+            if user["id"] in student_ids:
+                attendance = {
+                    "attendance id": data_attendance["attendance id"],
+                    "t-f": student_ids[user["id"]],
+                    "group id": data_attendance["group_id"],
+                    "created_at": data_attendance["created_at"],
+                }
+                attendances.append(attendance)
+
+    print("No. Attendance ID - Qatnashdi - Groups ID - Date")
+    for i, attendance in enumerate(attendances, start=1):
+        print(
+            f"{i}. {attendance['attendance id']} - {attendance['t-f']} - {attendance['group id']} - {attendance['created_at']}"
+        )
+
+
+def student_payments(user):
+    data_payments = load(DATA_PATMENTS)
+    print(f"===== {user['username']}'s payments =====\n")
+    for i, data_payment in enumerate(data_payments, start=1):
+        print(f"{i}. {data_payment}")
