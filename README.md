@@ -70,7 +70,7 @@ The project follows **Object-Oriented Programming (OOP)** principles and uses **
 education-center-management-cli/
 │
 ├── data/
-│   ├── attendance.json
+│   ├── attendances.json
 │   ├── courses.json
 │   ├── groups.json
 │   ├── ids.json
@@ -108,6 +108,7 @@ education-center-management-cli/
 │   ├── auth_service.py
 │   ├── course_service.py
 │   ├── group_service.py
+│   ├── reports_service.py
 │   ├── payment_service.py
 |   ├── teacher_service.py
 │   ├── student_service.py
@@ -117,7 +118,6 @@ education-center-management-cli/
 │   ├── generator.py
 │   └── validator.py
 │
-├── config.py
 ├── main.py
 └── README.md
 ```
@@ -170,7 +170,7 @@ education-center-management-cli/
 │ 3. Search Student                   │
 │ 4. Update Student                   │
 │ 5. Delete Student                   │
-│ 6. Block / Activate                 │
+│ 6. Student Block / Activate         │
 │ 0. Back                             │
 └─────────────────────────────────────┘
 ```
@@ -239,9 +239,9 @@ education-center-management-cli/
 ├─────────────────────────────────────┤
 │ 1. Add Payment                      │
 │ 2. Payment History                  │
-│ 3. Monthly Payments                 │
-│ 4. Unpaid Students                  │
-│ 5. Delete Payment                   │
+│ 3. Unpaid Students                  │
+│ 4. Delete Payment                   │
+│ 5. Search Payment                   │
 │ 0. Back                             │
 └─────────────────────────────────────┘
 ```
@@ -256,8 +256,7 @@ education-center-management-cli/
 ├─────────────────────────────────────┤
 │ 1. Take Attendance                  │
 │ 2. Show Attendance                  │
-│ 3. Today's Attendance               │
-│ 4. Student Attendance               │
+│ 3. Student Attendance               │
 │ 0. Back                             │
 └─────────────────────────────────────┘
 ```
@@ -270,14 +269,14 @@ education-center-management-cli/
 ┌─────────────────────────────────────┐
 │               REPORTS               │
 ├─────────────────────────────────────┤
-│ 1. Total Students                   │
-│ 2. Total Teachers                   │
-│ 3. Total Groups                     │
-│ 4. Total Courses                    │
-│ 5. Monthly Income                   │
-│ 6. Top Groups                       │
-│ 7. Attendance Report                │
-│ 8. Export Report                    │
+│ 1. Total Users                      │
+│ 2. Total Students                   │
+│ 3. Total Teachers                   │
+│ 4. Total Groups                     │
+│ 5. Total Courses                    │
+│ 6. Total Attendances                │
+│ 7. Total Payments                   │
+│ 8. Total IDs                        │
 │ 0. Back                             │
 └─────────────────────────────────────┘
 ```
@@ -292,8 +291,8 @@ education-center-management-cli/
 ├─────────────────────────────────────┤
 │ 1. My Profile                       │
 │ 2. My Groups                        │
-│ 3. Students                         │
-│ 4. Attendance                       │
+│ 3. Attendance                       │
+│ 4. Payments                         │
 │ 0. Exit                             │
 └─────────────────────────────────────┘
 ```
@@ -308,8 +307,8 @@ education-center-management-cli/
 ├─────────────────────────────────────┤
 │ 1. My Profile                       │
 │ 2. My Group                         │
-│ 3. Attendance                       │
-│ 4. Payments                         │
+│ 3. Students                         │
+│ 4. Attendance                       │
 │ 0. Exit                             │
 └─────────────────────────────────────┘
 ```
