@@ -1,4 +1,4 @@
-<img src="https://capsule-render.vercel.app/api?type=waving&color=gradient&height=180&section=header&text=🎓 Education Center Management System (CLI)&fontSize=35&fontAlignY=35&animation=fadeIn&fontColor=ffffff" width="100%"/>
+<img src="https://capsule-render.vercel.app/api?type=waving&color=gradient&height=180&section=header&text=%F0%9F%8D%93%20Education%20Center%20Management%20System%20(CLI)&fontSize=30&fontAlignY=35&animation=fadeIn&fontColor=ffffff" width="100%"/>
 
 <p align="center">
 
